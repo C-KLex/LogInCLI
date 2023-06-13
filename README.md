@@ -6,6 +6,28 @@ Design and develop a simple login CLI (Command Line Interface) application. The 
 
 First, branch out your branch from the latest `main` branch. Second, develop the CLI. Finally, just stay in your branch and never merge back to the `main`.
 
+## 👀MUST READ BEFORE DEVELOPING
+
+Here are a few important concepts involved with the project. My suggestion is to read through all the articles first to have a brief understanding from a higher-level viewpoint. You don't need to 100% follow the reference because a few of them are too deep, and it is not suitable for this tiny project.
+
+Read through all the articles roughly once, and then pick the important concepts you need to implement on the project!
+
+* ## Package & Module❗
+
+    **<https://docs.python.org/3/tutorial/modules.html>**
+
+    **<https://www.programiz.com/python-programming/package>**
+
+    **<https://www.geeksforgeeks.org/python-packages/>**
+
+* ## Python Project Structure Layout❗
+
+    **<https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6>**
+
+    **<https://medium.com/mlearning-ai/a-practical-guide-to-python-project-structure-and-packaging-90c7f7a04f95>**
+
+    **<https://docs.python-guide.org/writing/structure/>**
+
 ## 📚Design Needs
 
 * `User Register`
@@ -45,14 +67,18 @@ First, branch out your branch from the latest `main` branch. Second, develop the
 
     The following command will run the whole project folder due to the `__main__.py` file inside the folder `./LogInCLI`.
 
-    If you are inside the project folder.
+    If you are inside the project folder ( `LogInCLI/` )
+
     ```plain
     python3 ./ 
     ```
 
-    If you are outside the project folder. 
+    If you are outside the project folder.
+
     ```plain
     python3 ./LogInCLI
     ```
 
-* Reference AnswerThe referenced answer will be released after one week.
+* Reference Answer
+
+    The referenced project design will be released after one week.
