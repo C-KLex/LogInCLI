@@ -1,3 +1,5 @@
+from login_cli.backend import backend
+
 def success_login():
     print("LOGIN SUCCESS")
 
@@ -19,3 +21,6 @@ def register_module():
 def exit_app():
     print("LOGOUT SUCCESSFUL")
     quit()
+
+def frontend_text():
+    print("SUCCESSFUL")
