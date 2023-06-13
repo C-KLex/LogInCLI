@@ -56,11 +56,13 @@ Read through all the articles roughly once, and then pick the important concepts
     ```plain
     LogInCLI/
     ├── README.md
-    ├── __main__.py (Main Run File)
-    └── src (Source Code)
-        ├── app.py
-        ├── backend.csv (Baskend Storage for Account Information)
-        └── log (CLI Log for Tracking Activity)
+    ├── __main__.py (application run point)
+    ├── doc
+    │   └── design_document.md (write down how you design this application)
+    └── src
+        ├── app.py (the code)
+        ├── backend.csv (backend database to store the user infomation)
+        └── log (track the login activity)
     ```
 
 * How to run the CLI
