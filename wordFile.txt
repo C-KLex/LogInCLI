@@ -1,1 +1,2 @@
 gitSession, Hi this is the first line
+gitSession, Hi this is the second line
