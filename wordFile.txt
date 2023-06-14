@@ -1,2 +1,4 @@
 gitSession, Hi this is the first line
-gitSession, Hi this is the second line
+gitSession, Hi this is the second line, gSession also likes drama
+gitSession, make it messy
+GitSession, make it fun
