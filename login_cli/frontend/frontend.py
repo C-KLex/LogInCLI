@@ -2,7 +2,6 @@ from login_cli.backend.backend import Backend
 
 class Frontend:
 
-
     ##### LOGIN MODULE #####
     @classmethod
     def login_page(cls):
@@ -32,6 +31,7 @@ class Frontend:
         print("##### LOGIN SUCCESS, HI! ", username, " #####")
         quit()
 
+
     ##### REGISTER MODULE #####   
     @classmethod
     def register_page(cls):
@@ -54,11 +54,13 @@ class Frontend:
     def account_exist_page(cls):
         print("!!ACCOUNT ALREADY EXISTS !!\n")
 
+
     ##### EXIT APP PAGE #####
     @classmethod
     def exit_app_page(cls):
         print("!! LOGOUT SUCCESSFUL !!\n")
         quit()
+
 
     ##### MAIN PAGE #####     
     @classmethod
