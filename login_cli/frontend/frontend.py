@@ -2,6 +2,8 @@ from login_cli.backend.backend import Backend
 
 class Frontend:
 
+    is_logged_in = False
+
     ##### LOGIN MODULE #####
     @classmethod
     def login_page(cls):
@@ -60,7 +62,10 @@ class Frontend:
     ##### EXIT APP PAGE #####
     @classmethod
     def exit_app_page(cls):
-        print("!! LOGOUT SUCCESSFUL !!\n")
+        if cls.is_logged_in:
+            print("!! LOGOUT SUCCESSFUL !!\n")
+        else:
+            print("!!CLOSING APP!!")
         quit()
 
 
