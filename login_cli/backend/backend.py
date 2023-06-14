@@ -4,9 +4,10 @@ SUMMARY:
 """
 
 import csv
+from datetime import datetime
 
 csv_path_from_main = "login_cli/backend/backend.csv"
-log_path_from_main = "log"
+log_path_from_main = "login_cli/backend/log.txt"
 
 class Backend:
 
@@ -63,9 +64,10 @@ class Backend:
         return username in users
     
     @classmethod
-    def write_login_log(cls, username: str) -> None:
+    def write_login_log(cls, username: str):
 
         with open(log_path_from_main, "a") as f:
-            for line in f:
-                print(line)
-        
+            
+            log = str(datetime.now()) + " | " + username + "\n"
+            f.write(log)
+            f.close()
