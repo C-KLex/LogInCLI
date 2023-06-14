@@ -1,3 +1,8 @@
+"""
+SUMMARY:
+    The frontend of LogIn_CLI
+"""
+
 from login_cli.backend.backend import Backend
 
 class Frontend:
@@ -46,7 +51,6 @@ class Frontend:
         print("!!!!! LOGIN SUCCESS, HI! ", username, " !!!!!")
         quit()
 
-
     ##### REGISTER MODULE #####   
     @classmethod
     def register_page(cls):
@@ -90,16 +94,12 @@ class Frontend:
         cls.is_logged_in = False
         return 
 
-
     ##### MAIN PAGE #####     
     @classmethod
     def main_menu_page(cls):
         cls._module_title("##### MAIN MENU #####")
         return int(input("!! 1 For Login, 2 For Register, 3 For Exit: !!\n"))
-
-
-
-
+    
     @classmethod
     def _module_title(cls, title):
         print(title, "\n")
