@@ -14,7 +14,6 @@ class Backend:
         """
         SUMMARY:
             Check if the 'password' is matched with the database of given 'username'
-        
         """
         
         with open(csv_path_from_main, "r") as f:
