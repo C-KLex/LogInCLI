@@ -1,5 +1,5 @@
 # generated files in local
-log
+*log.txt
 *.csv
 
 # Byte-compiled / optimized / DLL files

@@ -6,6 +6,7 @@ SUMMARY:
 import csv
 
 csv_path_from_main = "login_cli/backend/backend.csv"
+log_path_from_main = "log"
 
 class Backend:
 
@@ -29,7 +30,7 @@ class Backend:
         return password == pword  
     
     @classmethod
-    def add_account(cls, username: str, password: str) -> bool():
+    def add_account(cls, username: str, password: str) -> None:
         """
         SUMMARY: 
             Add ['username', 'password'] to the database
@@ -60,4 +61,11 @@ class Backend:
             f.close()
 
         return username in users
+    
+    @classmethod
+    def write_login_log(cls, username: str) -> None:
+
+        with open(log_path_from_main, "a") as f:
+            for line in f:
+                print(line)
         

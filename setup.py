@@ -25,7 +25,7 @@ def setup_log():
     user_input = input("WARNING: This action will delete the previous log!!! (y\\n): ")
 
     if user_input in ["Y", "y"]:
-        subprocess.run(["touch", "log"])
+        subprocess.run(["touch", "login_cli/backend/log.txt"])
         print("DONE SETUP LOG")
     elif user_input in ["N", "n"]:
         print("SKIP SETUP LOG")
