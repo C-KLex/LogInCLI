@@ -6,14 +6,14 @@ class App:
 
         while True:
 
-            Frontend.main_menu_page()
+            page_choice = Frontend.main_menu_page()
 
-            if Frontend.page_tag == 1:
+            if page_choice == 1:
                 Frontend.login_page()
 
-            elif Frontend.page_tag == 2:
+            elif page_choice == 2:
                 Frontend.register_page()
 
-            elif Frontend.page_tag == 3:
+            elif page_choice == 3:
                 Frontend.exit_app_page()
 

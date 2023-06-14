@@ -2,13 +2,8 @@ from login_cli.backend.backend import Backend
 
 class Frontend:
 
-    _page_tag = 0
 
-    @property
-    def page_tag(cls):
-        return cls._page_tag
-
-    ##### LOGIN MODULE  
+    ##### LOGIN MODULE #####
     @classmethod
     def login_page(cls):
 
@@ -37,20 +32,40 @@ class Frontend:
         print("##### LOGIN SUCCESS, HI! ", username, " #####")
         quit()
 
-    ##### REGISTER MODULE    
+    ##### REGISTER MODULE #####   
     @classmethod
     def register_page(cls):
+        
         cls._module_title("##### REGISTER MODULE#####")
+        username = input("USERNAME: ")
+        password = input("PASSWORD: ")
+        
+        if Backend.account_exist(username):
+            cls.account_exist_page()
 
+        Backend.add_account(username, password)
+        cls.register_success_page()
+
+    @classmethod
+    def register_success_page(cls):
+        print("!! REGISTER SUCCESS !!\n")
+
+    @classmethod
+    def account_exist_page(cls):
+        print("!!ACCOUNT ALREADY EXISTS !!\n")
+
+    ##### EXIT APP PAGE #####
     @classmethod
     def exit_app_page(cls):
-        print("LOGOUT SUCCESSFUL")
+        print("!! LOGOUT SUCCESSFUL !!\n")
         quit()
 
-    ##### MAIN PAGE       
+    ##### MAIN PAGE #####     
     @classmethod
     def main_menu_page(cls):
-        Frontend.page_tag = int(input("1 For Login, 2 For Register, 3 For Exit: \n"))
+        cls._module_title("##### MAIN MENU #####")
+        return int(input("1 For Login, 2 For Register, 3 For Exit: \n"))
+
 
 
 
