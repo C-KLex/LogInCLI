@@ -42,8 +42,10 @@ class Frontend:
         
         if Backend.account_exist(username):
             cls.account_exist_page()
+            return 
 
         Backend.add_account(username, password)
+
         cls.register_success_page()
 
     @classmethod

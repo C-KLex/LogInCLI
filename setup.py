@@ -1,4 +1,7 @@
 import subprocess
+import csv
+
+HEADER = ["USERNAME", "PASSWORD"]
 
 def setup_backend_database():
 
@@ -7,6 +10,11 @@ def setup_backend_database():
 
     if user_input in ["Y", "y"]:
         subprocess.run(["touch", "login_cli/backend/backend.csv"])
+        with open("login_cli/backend/backend.csv", "w", newline="") as f:
+            writer = csv.writer(f)
+            writer.writerow(HEADER)
+            f.close()
+
         print("DONE SETUP DATABASE")
     elif user_input in ["N", "n"]:
         print("SKIP SETUP DATABASE")
