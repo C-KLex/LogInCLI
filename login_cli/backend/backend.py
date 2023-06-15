@@ -73,9 +73,13 @@ class Backend:
             f.close()
 
     @classmethod
-    def show_log(cls):
+    def return_log(cls) -> list():
+
+        lines = [] 
 
         with open(log_path_from_main, "r") as f:
             for line in f:
-                print(line)
+                lines.append(line)
+        
+        return lines
         

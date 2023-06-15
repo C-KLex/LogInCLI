@@ -50,7 +50,6 @@ class Frontend:
     @classmethod
     def login_success_page(cls, username):
         print("!!!!! LOGIN SUCCESS, HI! ", username, " !!!!!")
-        quit()
 
     ##### REGISTER MODULE #####   
     @classmethod
@@ -84,13 +83,15 @@ class Frontend:
     @classmethod
     def exit_app_page(cls):
         if cls.is_logged_in:
-            print("!! LOGOUT SUCCESSFUL !!\n")
+            cls._logout_page()
+
         else:
             print("!! CLOSING APP !!")
+
         quit()
 
     @classmethod
-    def logout_page(cls):
+    def _logout_page(cls):
         print("!! LOGOUT SUCCESSFULLY !!")
         cls.is_logged_in = False
         return 
@@ -101,6 +102,18 @@ class Frontend:
         cls._module_title("##### MAIN MENU #####")
         return int(input("!! 1 For Login, 2 For Register, 3 For Exit: !!\n"))
     
+    ##### MAIN PAGE AFTER LOGGED IN #####
+    @classmethod
+    def main_menu_after_logged_page(cls):
+        cls._module_title("##### LOGGED IN #####")
+        return int(input("!! 1 For Show Log, 2 For Exit: !!\n"))
+    
+    @classmethod
+    def show_log_page(cls):
+        logs = Backend.return_log()
+        for log in logs:
+            print(log)
+
     @classmethod
     def _module_title(cls, title):
         print(title, "\n")

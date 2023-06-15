@@ -14,15 +14,27 @@ class App:
     def run(self):
 
         while True:
+            
+            if Frontend.is_logged_in:
 
-            page_choice = Frontend.main_menu_page()
+                page_choice = Frontend.main_menu_after_logged_page()
 
-            if page_choice == 1:
-                Frontend.login_page()
+                if page_choice == 1:
+                    Frontend.show_log_page()
+                
+                elif page_choice == 2:
+                    Frontend.exit_app_page()    
+            
+            else:
 
-            elif page_choice == 2:
-                Frontend.register_page()
+                page_choice = Frontend.main_menu_page()
 
-            elif page_choice == 3:
-                Frontend.exit_app_page()
+                if page_choice == 1:
+                    Frontend.login_page()
+
+                elif page_choice == 2:
+                    Frontend.register_page()
+
+                elif page_choice == 3:
+                    Frontend.exit_app_page()
 
