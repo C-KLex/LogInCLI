@@ -71,3 +71,11 @@ class Backend:
             log = str(datetime.now()) + " | " + username + "\n"
             f.write(log)
             f.close()
+
+    @classmethod
+    def show_log(cls):
+
+        with open(log_path_from_main, "r") as f:
+            for line in f:
+                print(line)
+        
