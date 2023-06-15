@@ -1,5 +1,5 @@
 """
-SUMMARY:
+Summary:
     The frontend of LogIn_CLI
 """
 
@@ -25,7 +25,7 @@ class Frontend:
                 return 
             
             if not_valid := not Backend.login_validation(username, password):
-                print("!! WRONG CREDENTIAL, YOU CAN TRY ", 3 - log_in_try_number, " TIMES !!\n")
+                print("!! WRONG CREDENTIAL, YOU CAN TRY ", 3 - log_in_try_number, " TIMES !!")
 
             else:
                 cls.is_logged_in = True
@@ -100,21 +100,22 @@ class Frontend:
     @classmethod
     def main_menu_page(cls):
         cls._module_title("##### MAIN MENU #####")
-        return int(input("!! 1 For Login, 2 For Register, 3 For Exit: !!\n"))
+        return int(input("!! 1 For Login, 2 For Register, 3 For Exit: !!"))
     
     ##### MAIN PAGE AFTER LOGGED IN #####
     @classmethod
     def main_menu_after_logged_page(cls):
-        cls._module_title("##### LOGGED IN #####")
-        return int(input("!! 1 For Show Log, 2 For Exit: !!\n"))
+        cls._module_title("##### LOGGED IN MENU #####")
+        return int(input("!! 1 For Show Log, 2 For Exit: !!"))
     
     @classmethod
     def show_log_page(cls):
         logs = Backend.return_log()
+        print("##### LOGS #####")
         for log in logs:
             print(log)
 
     @classmethod
     def _module_title(cls, title):
-        print(title, "\n")
+        print(title)
         return

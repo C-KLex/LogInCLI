@@ -1,8 +1,8 @@
 """
-SUMMARY:
+Summary:
     Main App Structure of LogIn_CLI
 
-DISCRIPTION:
+Discription:
     LogIn_CLI has three main modules, `login module`, register module`, and 'exit'. 
     The `main_menu page` will control which module the user will go.
 """

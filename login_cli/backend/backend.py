@@ -1,24 +1,24 @@
 """
-SUMMARY:
+Summary:
     The backend of LogIn_CLI
 """
 
 import csv
 from datetime import datetime
 
-csv_path_from_main = "login_cli/backend/backend.csv"
-log_path_from_main = "login_cli/backend/log.txt"
+CSV_PATH_FROM_MAIN = "login_cli/backend/backend.csv"
+LOG_PATH_FROM_MAIN = "login_cli/backend/log.txt"
 
 class Backend:
 
     @classmethod
     def login_validation(cls, username: str, password: str) -> bool():
         """
-        SUMMARY:
+        Summary:
             Check if the 'password' is matched with the database of given 'username'
         """
         
-        with open(csv_path_from_main, "r") as f:
+        with open(CSV_PATH_FROM_MAIN, "r") as f:
             reader = csv.reader(f)
             next(reader)
             for row in reader:
@@ -33,12 +33,12 @@ class Backend:
     @classmethod
     def add_account(cls, username: str, password: str):
         """
-        SUMMARY: 
+        Summary: 
             Add ['username', 'password'] to the database
         
         """
 
-        with open(csv_path_from_main, "a", newline="") as f:
+        with open(CSV_PATH_FROM_MAIN, "a", newline="") as f:
             writer = csv.writer(f)
             writer.writerow([username, password])
             f.close()
@@ -48,13 +48,13 @@ class Backend:
     @classmethod
     def account_exist(cls, username: str) -> bool():
         """
-        SUMMARY:
+        Summary:
             Check if 'username' has already existed in the database
         
         """
 
         users = set()
-        with open(csv_path_from_main, "r") as f:
+        with open(CSV_PATH_FROM_MAIN, "r") as f:
             reader = csv.reader(f)
             next(reader)
             for row in reader:
@@ -65,8 +65,12 @@ class Backend:
     
     @classmethod
     def write_login_log(cls, username: str):
+        """
+        Summary:
+            Write a line of log to the log.txt file
+        """
 
-        with open(log_path_from_main, "a") as f:
+        with open(LOG_PATH_FROM_MAIN, "a") as f:
             
             log = str(datetime.now()) + " | " + username + "\n"
             f.write(log)
@@ -74,10 +78,13 @@ class Backend:
 
     @classmethod
     def return_log(cls) -> list():
-
+        """
+        Summary:
+            Return all logs in a list
+        """
         lines = [] 
 
-        with open(log_path_from_main, "r") as f:
+        with open(LOG_PATH_FROM_MAIN, "r") as f:
             for line in f:
                 lines.append(line)
         

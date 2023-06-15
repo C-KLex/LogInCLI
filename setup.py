@@ -1,3 +1,7 @@
+"""
+Summary:
+    The set up before running the CLI
+"""
 import subprocess
 import csv
 
@@ -26,7 +30,13 @@ def setup_log():
 
     if user_input in ["Y", "y"]:
         subprocess.run(["touch", "login_cli/backend/log.txt"])
+
+        with open("login_cli/backend/log.txt", "w") as f:
+            f.write("")
+            f.close()
+
         print("DONE SETUP LOG")
+
     elif user_input in ["N", "n"]:
         print("SKIP SETUP LOG")
 
