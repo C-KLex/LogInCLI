@@ -31,7 +31,7 @@ class Backend:
         return password == pword  
     
     @classmethod
-    def add_account(cls, username: str, password: str) -> None:
+    def add_account(cls, username: str, password: str):
         """
         SUMMARY: 
             Add ['username', 'password'] to the database

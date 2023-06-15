@@ -29,6 +29,7 @@ class Frontend:
 
             else:
                 cls.is_logged_in = True
+                Backend.write_login_log(username)
                 cls.login_success_page(username)
                 return 
 
@@ -36,7 +37,7 @@ class Frontend:
         return  
 
     @classmethod
-    def account_not_exist_page():
+    def account_not_exist_page(cls):
         print("!! ACCOUNT NOT EXIST !!")
         print("!! PLEASE REGISTER FIRST !!")
         return 
