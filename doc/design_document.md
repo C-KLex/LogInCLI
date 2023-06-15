@@ -78,4 +78,17 @@
 2. Run the CLI
 
         $ python3 ./
-        
+
+## 🤚Warning
+
+* Input Validation
+
+    If the User type non-integer, space, or empty string, the APP will give error and stop working.
+
+* Space Key Avoidance
+
+    The APP also take the space key as part of the string. For example, "foo" and "foo " are different for the APP, for human, however, they look the same on the command line. This will cause unnessary mistake while typing the log in information.
+
+* Database Missing Error
+
+    If one of the database is missing (backend.csv or log.txt), the APP won't notify WHICH one is missing but notify "DATABASE HAS ERROR". User can't tell which database has error, so the user can only reset all the database, and the action may erase all the existing data entries.
