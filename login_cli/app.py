@@ -8,10 +8,17 @@ Discription:
 """
 
 from login_cli.frontend.frontend import Frontend 
+from os import path
+
+DB1_PATH = "login_cli/backend/backend.csv"
+DB2_PATH = "login_cli/backend/log.txt"
 
 class App:
 
     def run(self):
+
+        if not path.exists(DB1_PATH) or not path.exists(DB2_PATH):
+            Frontend.DB_error_page()
 
         while True:
             
