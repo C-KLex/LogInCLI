@@ -2,6 +2,9 @@
 *log.txt
 *.csv
 
+# dev testing files
+dev.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
