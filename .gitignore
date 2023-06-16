@@ -1,6 +1,6 @@
 # generated files in local
 *log.txt
-*.csv
+*backend.csv
 
 # dev testing files
 dev.py

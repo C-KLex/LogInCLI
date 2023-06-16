@@ -4,17 +4,7 @@
 
 Design and develop a simple login CLI (Command Line Interface) application. The CLI provides `User Register` and `User Login`. Besides the two main services, the CLI also outputs a log file to track the login record.
 
-1. Make a branch from the latest `main` branch.
-
-2. Develop the CLI locally.
-
-3. Publish your branch to the repo.
-
-4. Create a release.
-
-🚫DON'T PULL REQUEST or MERGE YOUR BRANCH INTO THE MAIN BRANCH!
-
----
+First, branch out your branch from the latest `main` branch. Second, develop the CLI. Finally, just stay in your branch and never merge back to the `main`.
 
 ## 👀MUST READ BEFORE DEVELOPING
 
@@ -22,7 +12,7 @@ Here are a few important concepts involved with the project. My suggestion is to
 
 Read through all the articles roughly once, and then pick the important concepts you need to implement on the project!
 
-* ### Package & Module❗
+* ## Package & Module❗
 
     **<https://docs.python.org/3/tutorial/modules.html>**
 
@@ -30,19 +20,13 @@ Read through all the articles roughly once, and then pick the important concepts
 
     **<https://www.geeksforgeeks.org/python-packages/>**
 
-* ### Python Project Structure Layout❗
+* ## Python Project Structure Layout❗
 
     **<https://dev.to/codemouse92/dead-simple-python-project-structure-and-imports-38c6>**
 
     **<https://medium.com/mlearning-ai/a-practical-guide-to-python-project-structure-and-packaging-90c7f7a04f95>**
 
     **<https://docs.python-guide.org/writing/structure/>**
-
-* ### Markdown File Cheatsheet
-
-    **<https://www.markdownguide.org/cheat-sheet/>**
-
----
 
 ## 📚Design Needs
 
@@ -63,12 +47,6 @@ Read through all the articles roughly once, and then pick the important concepts
 
     It stores the login history if the user's login is successful.
 
-* Design Doc Markdown
-
-    Tell people how you design the CLI and how a user can use the CLI.
-
----
-
 ## 🏨Project Structure Template Recommendations
 
 * The template structure
@@ -80,11 +58,11 @@ Read through all the articles roughly once, and then pick the important concepts
     ├── README.md
     ├── __main__.py (application run point)
     ├── doc
-    │   └── design_document.md (the design document and user manual)
+    │   └── design_document.md (write down how you design this application)
     └── src
         ├── app.py (the code)
         ├── backend.csv (backend database to store the user information)
-        └── log.txt (track the login activity)
+        └── log (track the login activity)
     ```
 
 * How to run the CLI
