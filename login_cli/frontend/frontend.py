@@ -11,9 +11,9 @@ class Frontend:
 
     @classmethod
     def DB_error_page(cls):
-        print("⛔ Error: Database is not properly initialized")
-        print("⛔ try: python3 setup.py")
-        quit()
+        print("Error: Database is not properly initialized")
+        print("scdtry: python3 setup.py")
+        cls.should_exit = True
 
     ##### LOGIN MODULE #####
     @classmethod
@@ -23,8 +23,8 @@ class Frontend:
 
         for log_in_try_number in range(1, 4):
             
-            username = input("😀 USERNAME: ")
-            password = input("🔑 PASSWORD: ") 
+            username = input("USERNAME: ")
+            password = input("PASSWORD: ") 
 
             if not Backend.account_exist(username):
                 cls.account_not_exist_page() 
@@ -55,15 +55,15 @@ class Frontend:
 
     @classmethod
     def login_success_page(cls, username):
-        print("👋 LOGIN SUCCESS, HI! ", username, " 👋")
+        print("LOGIN SUCCESS, HI! ", username, "!!!")
 
     ##### REGISTER MODULE #####   
     @classmethod
     def register_page(cls):
         
         cls._module_title("##### REGISTER MODULE#####")
-        username = input("😀 USERNAME: ")
-        password = input("🔑 PASSWORD: ") 
+        username = input("USERNAME: ")
+        password = input("PASSWORD: ") 
         
         if Backend.account_exist(username):
             cls.account_exist_page()
@@ -105,13 +105,13 @@ class Frontend:
     ##### MAIN PAGE #####     
     @classmethod
     def main_menu_page(cls):
-        cls._module_title("📚 MAIN MENU 📚")
+        cls._module_title("-----MAIN MENU-----")
         return int(input("!! 1 For Login, 2 For Register, 3 For Exit: !!"))
     
     ##### MAIN PAGE AFTER LOGGED IN #####
     @classmethod
     def main_menu_after_logged_page(cls):
-        cls._module_title("🔐 LOGGED IN MENU 🔐")
+        cls._module_title("-----LOGGED IN MENU-----")
         return int(input("!! 1 For Show Log, 2 For Exit: !!"))
     
     @classmethod
