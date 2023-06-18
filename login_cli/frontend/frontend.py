@@ -33,7 +33,7 @@ class Frontend:
             
             if not_valid := not Backend.login_validation(username, password):
                 print("!! WRONG CREDENTIAL, YOU CAN TRY ", 3 - log_in_try_number, " TIMES !!")
-
+                
             else:
                 cls.is_logged_in = True
                 Backend.write_login_log(username)
