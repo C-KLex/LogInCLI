@@ -20,7 +20,7 @@ class App:
         if not path.exists(DB1_PATH) or not path.exists(DB2_PATH):
             Frontend.DB_error_page()
 
-        while True:
+        while not Frontend.should_exit:
             
             if Frontend.is_logged_in:
 

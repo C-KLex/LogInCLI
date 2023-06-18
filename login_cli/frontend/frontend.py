@@ -8,6 +8,7 @@ from login_cli.backend.backend import Backend
 class Frontend:
 
     is_logged_in = False
+    should_exit = False
 
     @classmethod
     def DB_error_page(cls):
@@ -51,7 +52,7 @@ class Frontend:
     @classmethod
     def login_fail3_page(cls):
         print("!!!!! LOGIN FAIL !!!!!")
-        quit()
+        cls.should_exit = True
 
     @classmethod
     def login_success_page(cls, username):
@@ -94,7 +95,7 @@ class Frontend:
         else:
             print("!! CLOSING APP !!")
 
-        quit()
+        cls.should_exit = True
 
     @classmethod
     def _logout_page(cls):
