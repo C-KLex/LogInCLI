@@ -13,6 +13,7 @@
         └── login_cli (APP Package)
             ├── app.py (main file of login_cli)
             ├── backend/ (backend package)
+            ├── tests/ (pytest code)
             └── frontend/ (frontend package)
     ```
 
