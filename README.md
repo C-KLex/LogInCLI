@@ -6,6 +6,16 @@ Design and develop a simple login CLI (Command Line Interface) application. The 
 
 First, branch out your branch from the latest `main` branch. Second, develop the CLI. Finally, just stay in your branch and never merge back to the `main`.
 
+1. clone the repo to local
+
+2. branch out your branch from the latest `main` branch`
+
+3. develop the CLI
+
+4. publish the branch
+
+5. create a release
+
 ## 👀MUST READ BEFORE DEVELOPING
 
 Here are a few important concepts involved with the project. My suggestion is to read through all the articles first to have a brief understanding from a higher-level viewpoint. You don't need to 100% follow the reference because a few of them are too deep, and it is not suitable for this tiny project.
@@ -47,6 +57,10 @@ Read through all the articles roughly once, and then pick the important concepts
 
     It stores the login history if the user's login is successful.
 
+* design_document.md
+
+    Write down your design and how to run the CLI.
+
 ## 🏨Project Structure Template Recommendations
 
 * The template structure
@@ -69,16 +83,10 @@ Read through all the articles roughly once, and then pick the important concepts
 
     The following command will run the whole project folder due to the `__main__.py` file inside the folder `./LogInCLI`.
 
-    If you are inside the project folder ( `LogInCLI/` )
+    Go inside the project folder ( `LogInCLI/` )
 
     ```plain
     python3 ./ 
-    ```
-
-    If you are outside the project folder.
-
-    ```plain
-    python3 ./LogInCLI
     ```
 
 * Reference Answer
