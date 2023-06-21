@@ -1,27 +1,26 @@
 import csv
 from datetime import datetime
 
+def no_empty(prompt):
+    while True:
+        value = input(prompt).strip()
+        if value:
+            return value
+        print("Invalid input. Please try again.")
+
+
 def register():
-
     while True:
-        username = input("Enter a username: ").strip()
-        if username:
-            break
-        print("Invalid username. Please try again.")
-        
-    with open('src/backend.csv', 'r') as csvfile:
-        reader = csv.reader(csvfile)
-        for row in reader:
-            if row[0] == username:
+        username = no_empty("Enter a username: ").strip()
+
+        with open('src/backend.csv', 'r') as csvfile:
+            reader = csv.reader(csvfile)
+            if any(row[0] == username for row in reader):
                 print("Username already exists. Please choose a different username.")
-                return 
-
-    while True:
-        password = input("Enter a password: ").strip()
-        if password:
-            break
-        print("Invalid password. Please try again.")
-    
+            else:
+                break
+                    
+    password = no_empty("Enter a password: ")
     with open('src/backend.csv', 'a', newline='') as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow([username,password])

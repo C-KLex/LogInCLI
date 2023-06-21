@@ -1,4 +1,5 @@
 from src.login_register import login, register
+
 def main():
     while True:
         choice = input("Please Enter Numbers: Register(1), Login(2), or Exit(3)? ")
