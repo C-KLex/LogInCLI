@@ -1,18 +1,14 @@
 """
 This file contains the function for users to login.
 """
-import datetime  # Datetime will be used to record the login time
-import csv  # csv will be used to process the data in backend.csv
+import datetime
+import csv
 
 
 def login():
-    # Give user proper instruction
     print("\nWelcome Back, Please Enter your User Name and Password Below: \n")
 
-    # First open the backend data
     with open("src/backend.csv", "r", encoding="utf-8") as record:
-
-        # Acquire the username and password
         username = input("Username(email): ")
         password = input("Password: ")
 
@@ -23,7 +19,6 @@ def login():
             if (("username", username) in row.items()) and (
                 ("password", password) in row.items()
             ):
-                # If it's right pair of username and password, print this message.
                 print("\nSuccessful Logged in! Welcome Back!\n")
 
                 # Append the log-in history in log file
@@ -31,7 +26,6 @@ def login():
                     log_in_history.write(
                         str(datetime.datetime.now()) + "  " + str(username) + "\n"
                     )
-                # Log-in successful, so end this program.
                 exit()
 
             # If only username is in the backend data but not the password,
@@ -41,7 +35,6 @@ def login():
                 ("password", password) not in row.items()
             ):
                 print("\nWrong password, please try again.\n")
-                # Not need to run further codes so just exit.
                 exit()
 
         # If it's not the above two scenario, it's a failed log-in, and they probably haven't
