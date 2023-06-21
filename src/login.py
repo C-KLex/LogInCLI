@@ -19,14 +19,13 @@ def login():
             if (("username", username) in row.items()) and (
                 ("password", password) in row.items()
             ):
-                print("\nSuccessful Logged in! Welcome Back!\n")
 
                 # Append the log-in history in log file
                 with open("src/log", "a", encoding="utf-8") as log_in_history:
                     log_in_history.write(
                         str(datetime.datetime.now()) + "  " + str(username) + "\n"
                     )
-                exit()
+                return "\nSuccessful Logged in! Welcome Back!\n"
 
             # If only username is in the backend data but not the password,
             # it means the user is entering wrong password,
@@ -34,8 +33,7 @@ def login():
             elif (("username", username) in row.items()) and (
                 ("password", password) not in row.items()
             ):
-                print("\nWrong password, please try again.\n")
-                exit()
+                return "\nWrong password, please try again.\n"
 
         # If it's not the above two scenario, it's a failed log-in, and they probably haven't
         # registered yet, so we print the below message.

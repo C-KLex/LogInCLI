@@ -20,8 +20,8 @@ def main():
     )
 
     if message1 == "Login":
-        login()
+        print(login())
     elif message1 == "Create":
-        register()
+        print(register())
     else:
         print("\nWrong instrction, please try again.\n")

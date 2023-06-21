@@ -17,10 +17,7 @@ def register():
 
             # If the user name is already registered, decline the registration
             if ("username", username) in row.items():
-                print(
-                    "\nAccount already exists, please log-in or change an user name and try again.\n"
-                )
-                exit()
+                return "\nAccount already exists, please log-in or change an user name and try again.\n"
 
     # If the user name is not yet registered, put their data in backend.csv
     row_first_register = [{"username": username, "password": password}]
@@ -47,5 +44,5 @@ def register():
                 row_later_register = {username: password}
                 writer = csv.writer(registor)
                 writer.writerows(row_later_register.items())
-        print("\nRegistered Successfully!\n")
+        return "\nRegistered Successfully!\n"
 
