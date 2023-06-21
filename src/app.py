@@ -36,27 +36,32 @@ def login():
 
     with open('src/backend.csv', 'r') as csvfile:
         reader = csv.reader(csvfile)
+        user_exists = False
         for row in reader:
-            if row[0] == username and row[1] == password:
-                print(f"Login successful, Hi {username}!")   
+            if row[0] == username:
+                user_exists = True
+                if row[1] == password:
+                    print(f"Login successful, Hi {username}!")   
             
-                with open('src/log', 'a') as log_in_hist:
-                    log_in_hist.write(f"{login_time} | {username}\n")
+                    with open('src/log', 'a') as log_in_hist:
+                        log_in_hist.write(f"{login_time} | {username}\n")
+                    return 
+                else:
+                    print("Invalid password.")
+                    return 
+        if not user_exists:
+            print("Username not found. Please register first.")
 
-                return 
-    print("Invalid username or password.")
-    
 
 def main():
+    while True:
+        choice = input("Please Enter Numbers: Register(1), Login(2), or Exit(3)? ")
 
-    choice = input("Register(1),  Login(2) or Exit(3) ?: ")
-
-    if choice == '1':
-        register()
-    elif choice == '2':
-        login()
-    elif choice == '3':
-        exit()
-    else:
-        print("Invalid. Please type again.")
-        
+        if choice == '1':
+            register()
+        elif choice == '2':
+            login()
+        elif choice == '3':
+            exit()
+        else:
+            print("Invalid choice. Please try again.")
