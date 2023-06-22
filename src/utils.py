@@ -28,16 +28,17 @@ def register(usernames):
     newpwd = input("Please set your password: ")
     if len(newpwd) < 6:
         print("Password should be longer than 5. Please try again.")
+        exit()
 
     repwd = input("Please reenter your password: ")
     if newpwd != repwd:
         print("Unmatched. Please reenter your password.")
+        exit()
 
     with open("src/backend.csv", "a+", encoding='utf-8') as be:
         be.write(f'{newname}:{newpwd}\n')
-        
-    print("Successfully registered.")
-    exit()
+        print("Successfully registered.")
+        exit()
 
 
 
