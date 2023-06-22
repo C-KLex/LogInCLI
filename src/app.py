@@ -1,4 +1,4 @@
-from utils import reload, register, login
+from src.utils import reload, register, login
 
 def main():
 
