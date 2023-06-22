@@ -46,18 +46,22 @@ def register(usernames):
 def login(usernames, passwords):
 
     username = input("Please enter your username: ")
-    if username in usernames:
-        password = input("Please enter your password: ")
-        index = usernames.index(username)
-        
-        if password == passwords[index]:
-            print("Successfully login.")
-
-            with open("src/log", "a+", encoding="utf-8") as loghist:
-                time = datetime.datetime.now()
-                loghist.write(str(time)+" "+str(username)+"\n")
-            exit()
-        else:
-            print("Wrong password. Please try again.")
-    else:
+    if username not in usernames:
         print("Wrong username. Please try again.")
+        exit()
+
+    password = input("Please enter your password: ")
+    index = usernames.index(username)
+    if password != passwords[index]:
+        print("Wrong password. Please try again.")
+        exit()
+
+    with open("src/log", "a+", encoding="utf-8") as loghist:
+        time = datetime.datetime.now()
+        loghist.write(str(time)+" "+str(username)+"\n")
+        print("Successfully login.")
+        exit()
+
+
+ 
+        
