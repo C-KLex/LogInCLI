@@ -37,6 +37,4 @@ def login():
 
         # If it's not the above two scenario, it's a failed log-in, and they probably haven't
         # registered yet, so we print the below message.
-        print(
-            "\nLog-in not successful, please try again. (If not registered please register first.)\n"
-        )
+        return "\nLog-in not successful, please try again. (If not registered please register first.)\n"

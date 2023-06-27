@@ -3,6 +3,7 @@ This file contains the function for users to register.
 """
 
 import csv
+from src.check_for_register import check
 
 
 def register():
@@ -11,13 +12,8 @@ def register():
     password = input("Password: ")
 
     # First check if account already exists the backend data
-    with open("src/backend.csv", "r", encoding="utf-8") as record:
-        key1 = csv.DictReader(record)
-        for row in key1:
-
-            # If the user name is already registered, decline the registration
-            if ("username", username) in row.items():
-                return "\nAccount already exists, please log-in or change an user name and try again.\n"
+    if check(username) is True:
+        return "\nAccount already exists, please log-in or change an user name and try again.\n"
 
     # If the user name is not yet registered, put their data in backend.csv
     row_first_register = [{"username": username, "password": password}]
