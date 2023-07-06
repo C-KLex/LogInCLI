@@ -1,4 +1,20 @@
-# 🔐LogInCLI
+# 🔐LoginCLI
+## How to Run LoginCLI (Java)
+
+Switch inside the java folder.
+
+1. Run the following command to compile the main class(LoginCLI.java).
+```console
+C:\LoginCLI\java> javac LoginCLI.java
+```
+
+2. Run the following command to run the application.
+```console
+C:\LoginCLI\java> java LoginCLI
+```
+
+> **Note** <br/>
+> While you are registering, CLI app will create a `.csv` file if the file is not exist, or you can put your own `.csv` file(filename: `database`) in the java folder (for CLI app to store the account and password).
 
 ## 📄Summary
 
